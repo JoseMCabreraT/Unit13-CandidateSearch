@@ -19,31 +19,19 @@ const Nav = () => {
               to='/'
               className={currentPage === '/' ? 'nav-link active' : 'nav-link'}
             >
-              TEST 1
+             Home
             </Link>
           </h2>
         </li>
         <li className='nav-item'>
           <h2>
             <Link
-              to='/WatchList'
+              to='/SavedCandidates'
               className={
-                currentPage === '/WatchList' ? 'nav-link active' : 'nav-link'
+                currentPage === '/SavedCandidates' ? 'nav-link active' : 'nav-link'
               }
             >
-              TES 2
-            </Link>
-          </h2>
-        </li>
-        <li className='nav-item'>
-          <h2>
-            <Link
-              to='/SeenIt'
-              className={
-                currentPage === '/SeenIt' ? 'nav-link active' : 'nav-link'
-              }
-            >
-              TEST 3
+              Potential Candidates
             </Link>
           </h2>
         </li>
@@ -52,7 +40,7 @@ const Nav = () => {
 
 
     </div>
-  )
+  )//return
 };
 
 export default Nav;

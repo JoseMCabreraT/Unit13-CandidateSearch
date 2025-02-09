@@ -2,6 +2,9 @@
 
 ## Description
 
+I built a candidate search application that calls the GitHub API and renders data in the browser. When the website loads, the information of one candidate is
+displayed. That includes name, username, location, avatar, html_url, and company. The user is able to add the candidate to a list of potential candidates.
+
 
 Deployed application url: 
 

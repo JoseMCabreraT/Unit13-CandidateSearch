@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import type Candidates from '../utils/Candidate.interface';
+import type Candidates from '../interfaces/Candidate.interface';
 
 const SavedCandidates = () => {
-  const clearLocalStorage = () => {
-    localStorage.removeItem('candidates');
-  };
+  const [CandidateSearch, setSavedCandidates] = useState<Candidates[]>([]);
+
+
+  useEffect(() => {
+    const CandidateSearch = JSON.parse(
+      localStorage.getItem('Candidates') as string
+    );
+    setSavedCandidates(CandidateSearch);
+  }, []);
 
   return (
     <>
