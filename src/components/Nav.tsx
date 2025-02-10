@@ -41,6 +41,6 @@ const Nav = () => {
 
     </div>
   )//return
-};
+}; //Nav function
 
 export default Nav;

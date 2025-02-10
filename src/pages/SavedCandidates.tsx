@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import type Candidates from '../interfaces/Candidate.interface';
+import type Candidate from '../interfaces/Candidate.interface'; //We can use the Candidates interface here.
 
 const SavedCandidates = () => {
-  const [CandidateSearch, setSavedCandidates] = useState<Candidates[]>([]);
+  const [CandidateSearch, setSavedCandidates] = useState<Candidate[]>([]);
 
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const SavedCandidates = () => {
   return (
     <>
       <h1>Potential Candidates</h1>
-      <button onClick={clearLocalStorage}>Clear Candidates</button>
+      
     </>
   );
 };

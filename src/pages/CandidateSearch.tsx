@@ -1,40 +1,43 @@
 import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
-import type Candidates from '../interfaces/Candidate.interface';
+import type Candidate from '../interfaces/Candidate.interface'; //We can use the Candidates interface here.
 
 const CandidateSearch = () => {
-  const [candidates, setCandidates] = useState<Candidates[]>([]);
-  const [query, setQuery] = useState('');
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+ // const [query, setQuery] = useState('');
 
   useEffect(() => {
     const fetchCandidates = async () => {
-      if (query) {
-        const result = await searchGithubUser(query);
-        setCandidates(result);
-      }
+      
+        const result = await searchGithub();
+        setCandidates(result)
+        
+       /* await Promise.all(
+          result.map(async (candidate: Candidate) => {
+            const singleCandidate = await searchGithubUser(candidate.login);
+            setCandidates(singleCandidate);
+            
+
+          })
+        )*/
+
+       
+      
     };
 
     fetchCandidates();
-  }, [query]);
+    console.log(candidates);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
+  }, []);
+
 
   return (
     <div>
       <h1>Candidate Search</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={handleSearch}
-        placeholder="Search for candidates"
-      />
-      <ul>
-        {candidates.map((candidate) => (
-          <li key={candidate.id}>{candidate.name}</li>
-        ))}
-      </ul>
+      
+    <div>
+      <h2></h2>
+    </div>
     </div>
   );
 };
