@@ -28,7 +28,7 @@ const CandidateSearch = () => {
     fetchCandidates();
     console.log(candidates);
 
-  }, []);
+  }, [candidates]);
 
 
   return (
