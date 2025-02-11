@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import type Candidate from '../interfaces/Candidate.interface'; //We can use the Candidates interface here.
+import React, { useEffect } from 'react';
+
 
 const SavedCandidates = () => {
-  const [CandidateSearch, setSavedCandidates] = useState<Candidate[]>([]);
+  
 
 
   useEffect(() => {
     const CandidateSearch = JSON.parse(
       localStorage.getItem('Candidates') as string
     );
-    setSavedCandidates(CandidateSearch);
+    (CandidateSearch);
   }, []);
 
   return (

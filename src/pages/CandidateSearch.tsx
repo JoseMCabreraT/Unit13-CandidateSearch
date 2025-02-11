@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { searchGithub, searchGithubUser } from '../api/API';
+import { searchGithub } from '../api/API';
 import type Candidate from '../interfaces/Candidate.interface'; //We can use the Candidates interface here.
 
 const CandidateSearch = () => {
